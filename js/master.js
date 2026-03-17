@@ -1,12 +1,7 @@
 
 const landing = document.querySelector(".landing");
 const imgs = ["imgs/01.jpg", "imgs/02.jpg", "imgs/03.jpg", "imgs/04.jpg"];
-
-setInterval(() => {
-  const randomIndex = Math.floor(Math.random() * imgs.length);
-  landing.style.backgroundImage = `url('${imgs[randomIndex]}')`;
-}, 2000);
-
+//Change Theme
 document.addEventListener('DOMContentLoaded', () => {
     const themeRadios = document.querySelectorAll('.theme-option input[name="theme"]');
     const STORAGE_KEY = 'preferred-theme';
@@ -38,6 +33,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+//Random Backgromds Settings
+let backgroundOption= true;
+let backgroundInterval;
+let backgroundLocalItem = localStorage.getItem("background_option");
+if(backgroundLocalItem !== null)
+{
+    if(backgroundLocalItem === 'true')
+    {
+        backgroundOption = true;
+    }
+    else
+    {
+        backgroundOption = false;
+    }
+    document.querySelectorAll(".random-backgrounds span").forEach(element => {
+        element.classList.remove("active");
+
+    });
+    if(backgroundLocalItem === 'true')
+    {
+        document.querySelector(".random-backgrounds .yes").classList.add("active");
+    }
+    else
+    {
+        document.querySelector(".random-backgrounds .no").classList.add("active");
+    }
+}
+document.addEventListener('DOMContentLoaded',()=>{
+    const RandomBackEl= document.querySelectorAll(".random-backgrounds span");
+    RandomBackEl.forEach(span => {
+    span.addEventListener('click', (e)=> {
+        e.target.parentElement.querySelectorAll(".active").forEach(element =>{
+            element.classList.remove("active")
+        })
+        e.target.classList.add("active");
+        if (e.target.dataset.background === 'yes')
+        {
+            backgroundOption=true;
+            RandomizeImages();
+            localStorage.setItem("background_option",true)
+        }
+        else
+        {
+            backgroundOption=false;
+            clearInterval(backgroundInterval);
+            localStorage.setItem("background_option",false)
+        }
+    })
+    });
+})
+//Random Backgromds Option
+function RandomizeImages()
+{
+    if(backgroundOption===true)
+    {
+        backgroundInterval=setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * imgs.length);
+        landing.style.backgroundImage = `url('${imgs[randomIndex]}')`;
+        }, 2000);
+    }
+}
+RandomizeImages();
 let navbarlinks =document.querySelectorAll(".navbar a");
 navbarlinks.forEach((element)=>
 {
@@ -73,14 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const settingsIcon = document.querySelector(".settings-box i");
 
     if (settingsBox && settingsIcon) {
-        // فتح/قفل بالضغط على الترس
         settingsIcon.addEventListener('click', (e) => {
             e.stopPropagation();
             settingsBox.classList.toggle('open');
             settingsIcon.classList.toggle("fa-spin");
         });
 
-        // إغلاق بالضغط خارج الـ settings box
         document.addEventListener('click', (e) => {
             if (!settingsBox.contains(e.target) && !settingsIcon.contains(e.target)) {
                 settingsBox.classList.remove('open');

@@ -246,7 +246,8 @@ font-weight: 500;
     background-color: var(--white);
     color: var(--black);
 }
-.settings-box .color-box
+.settings-box .color-box,
+.settings-box .background-box
 {
     padding-top: 30px;
     text-align: center;
@@ -310,5 +311,22 @@ font-weight: 500;
 .theme-option:hover .theme-label:not(:where(input:checked + *)) {
   background: rgba(0,0,0,0.06);
   color: #222;
+}
+.background-box h4
+{
+    margin-bottom: 25px;
+    color: var(--black);
+}
+.background-box .random-backgrounds span.active{
+    opacity: 1;
+}
+.random-backgrounds span
+{
+    padding: 5px 20px;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 5px;
+    opacity: 0.5;
+    cursor: pointer;
 }
 /* End Settings Box */
