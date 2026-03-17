@@ -62,6 +62,7 @@ color: var(--black);
 text-decoration: none;
 color: var(--black);
 font-size: 16px;
+margin-left: 10px;
 }
 .nav-menu a:first-child
 {
@@ -191,6 +192,7 @@ font-weight: 500;
         border:1px solid #CCC;
         color: #eee;
         margin-bottom: 10px;
+        margin-left: 0;
     }
     .nav-menu.active 
     {
@@ -199,6 +201,10 @@ font-weight: 500;
     .header-icons .toggle-menu
     {
     display: block;
+    }
+    .hero-content
+    {
+        text-align: center;
     }
 }
 /* Starting Settings Box */

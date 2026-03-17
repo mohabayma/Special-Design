@@ -7,13 +7,6 @@ setInterval(() => {
   landing.style.backgroundImage = `url('${imgs[randomIndex]}')`;
 }, 2000);
 
-// const settingsIcon = document.querySelector(".settings-box i");
-// const settingsBox  = document.querySelector(".settings-box ");
-// settingsIcon.addEventListener("click",()=>{
-//   settingsBox.classList.toggle("open");
-//   settingsIcon.classList.toggle("fa-spin");
-// });
-
 document.addEventListener('DOMContentLoaded', () => {
     const themeRadios = document.querySelectorAll('.theme-option input[name="theme"]');
     const STORAGE_KEY = 'preferred-theme';
@@ -60,21 +53,14 @@ navbarlinks.forEach((element)=>
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    // ────────────────────────────────
-    // 1. إغلاق الـ nav-menu بالضغط خارجها
-    // ────────────────────────────────
     const menuBtn = document.getElementById('menu-btn');
     const navMenu = document.getElementById('nav-menu');
-
     if (menuBtn && navMenu) {
-        // فتح/قفل بالضغط على الزر
         menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();           // منع الـ event من الانتشار
+            e.stopPropagation();   
             navMenu.classList.toggle('active');
         });
 
-        // إغلاق بالضغط خارج الـ menu
         document.addEventListener('click', (e) => {
             if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
                 navMenu.classList.remove('active');
@@ -82,9 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ────────────────────────────────
-    // 2. إغلاق الـ settings-box بالضغط خارجها
-    // ────────────────────────────────
     const settingsBox = document.querySelector('.settings-box');
     const toggleSettings = document.querySelector('.toggle-settings');
     const settingsIcon = document.querySelector(".settings-box i");
@@ -106,8 +89,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ────────────────────────────────
-    // باقي الكود بتاعك (الثيم، الروابط النشطة، إلخ)
-    // ────────────────────────────────
-    // ... حط هنا باقي الـ event listeners اللي عندك ...
 });
