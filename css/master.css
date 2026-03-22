@@ -264,8 +264,8 @@ font-weight: 500;
 }
 .vehicle-card img:hover
 {
-    transform: translatex(-10px);
-    width: 110%;
+    transform: translatex(-30px);
+    width: 500px;
 }
 .vehicle-card .description {
   padding: 24px;
@@ -539,6 +539,149 @@ margin-bottom: 20px;
   background-color: #eee;
 }
 /*End Services*/
+/*Start Footer*/
+footer
+{
+  background-color:oklch(.21 .034 264.665) ;
+  color: white;
+}
+footer p{
+  color: oklch(71.319% 0.03263 254.422);
+  font-size: 13px;
+  line-height: 1.4;
+}
+footer a
+{
+  color: oklch(71.319% 0.03263 254.422);
+  font-size: 12px;
+  text-decoration: none;
+  transition: 0.2s;
+  display: block;
+  margin-top: 15px;
+}
+footer a:hover{
+  color: #fff;
+}
+
+footer .container{
+max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+footer .container .footer-content
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px 24px;      
+  padding: 20px 0;
+  border-bottom: 0.5px solid oklch(71.319% 0.03263 254.422);
+
+}
+footer .container .footer-content .social
+{
+  
+}
+footer .container .footer-content .social .title{
+  display: flex;
+  justify-content: flex-start;
+}
+footer .container .footer-content .social .title h4{
+  align-content: center;
+}
+footer .container .footer-content .social .logo
+{
+  background: white;
+color: black;
+width: 35px;
+height: 35px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: bold;
+font-size: 14px;
+margin-bottom: 15px;
+margin-right: 10px;
+margin-top: 15px;
+}
+footer .container .footer-content .social .media
+{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 170px;
+  text-align: center;
+  padding-left: 8px;
+}
+footer .container .footer-content .social .media i
+{
+  font-size: smaller;
+  color:oklch(71.319% 0.03263 254.422);
+  cursor: pointer;
+}
+footer .container .footer-content .social .media i:hover{
+  color: White;
+}
+footer h5{
+  margin-bottom: 15px;
+}
+footer .container .footer-content .connect .form
+{
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  margin-top: 10px;
+}
+footer .container .footer-content .connect .form input
+{
+  padding: 10px;
+  font-size: 11px;
+  border-radius: 20px;
+  background-color:oklch(.278 .033 256.848); 
+  border: 1px solid oklch(.373 .034 259.733);
+  color: #fff;
+}
+footer .container .footer-content .connect .form button
+{
+  padding: 10px;
+  font-size: 11px;
+  border-radius: 20px; 
+  cursor: pointer;
+  transition: 0.2s;
+}
+footer  .form button:hover{
+  background-color: #dbd9d9;
+}
+footer .copyright
+{
+  display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 25px 0;
+}
+footer .copyright .links
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+}
+@media (max-width:767px)
+{
+  footer .footer-content
+  {
+    row-gap: 90px;
+  }
+  footer .copyright
+  {
+    flex-direction: column;
+  }
+  footer .copyright .links
+  {
+     width: 90%;
+  }
+}
+/*End Footer*/
 /* Starting Settings Box */
 .settings-box
 {
