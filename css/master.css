@@ -574,7 +574,7 @@ footer .container .footer-content
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px 24px;      
   padding: 20px 0;
-  border-bottom: 0.5px solid oklch(71.319% 0.03263 254.422);
+  border-bottom: 1px solid oklch(.373 .034 259.733);
 
 }
 footer .container .footer-content .social
