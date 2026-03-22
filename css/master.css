@@ -249,6 +249,7 @@ font-weight: 500;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
+  border: solid 1px rgba(0, 0, 0, 0.13);
 }
 
 .vehicle-card:hover {
@@ -512,9 +513,9 @@ margin-bottom: 20px;
   font-size: 14px;
 }
 .services-content .service ul {
- list-style: none;
+  list-style: none;
   color: #555;
-    font-size: 13px;
+  font-size: 13px;
 }
 .services-content .service ul li
 {
@@ -532,7 +533,7 @@ margin-bottom: 20px;
 .services-content .service:hover
 {
     transform: translateY(-8px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
 }
 .services-content .service button:hover
 {
@@ -576,10 +577,6 @@ footer .container .footer-content
   padding: 20px 0;
   border-bottom: 1px solid oklch(.373 .034 259.733);
 
-}
-footer .container .footer-content .social
-{
-  
 }
 footer .container .footer-content .social .title{
   display: flex;
